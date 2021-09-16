@@ -1,3 +1,8 @@
 Welcome to {{title}} 
 Hello {{user}}
+
+<ul>
+<li *ngFor = "let product of products">{{product.productName}}</li>
+</ul>
+
 <router-outlet></router-outlet>
