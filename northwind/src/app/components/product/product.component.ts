@@ -12,18 +12,22 @@ export class ProductComponent implements OnInit {
 
   products: Product[] = [];
   apiUrl = 'https://localhost:44335/api/products/getall'
-  productResponseModel: ProductResponseModel={
+  productResponseModel: ProductResponseModel = {
     data: this.products,
-    message:"",
-    success:true
+    message: "",
+    success: true
   };
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    console.log("Init çalıştı")
+    this.getProducts();
   }
 
   getProducts() {
-    this.httpClient.get<ProductResponseModel>(this.apiUrl).subscribe((response) => { this.products = response.data});
+    this.httpClient
+      .get<ProductResponseModel>(this.apiUrl)
+      .subscribe((response) => {
+        this.products = response.data
+      });
   }
 }
