@@ -11,13 +11,13 @@ import { ProductResponseModel } from 'src/app/models/productResponseModel';
 export class ProductComponent implements OnInit {
 
   products: Product[] = [];
-  apiUrl = 'https://localhost:44335/api/products/getall'
-  productResponseModel: ProductResponseModel = {
+  apiUrl = 'https://localhost:44335/api/products/getall';
+  /* productResponseModel: ProductResponseModel = {
     data: this.products,
     message: "",
-    success: true
-  };
-  constructor(private httpClient: HttpClient) { }
+    success: true 
+  }; */
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
     this.getProducts();
